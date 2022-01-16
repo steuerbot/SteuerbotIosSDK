@@ -15,12 +15,12 @@ Then, select `Add Package`.
 
 ### Embed the Framework
 
-Make sure `Steuerbot` is added to `Frameworks, Libraries and Embedded Content` in your Apps target.
+Make sure `Steuerbot` is added to `Frameworks, Libraries and Embedded Content` in your apps target.
 
 
 ## Usage
 
-Present Steuerbot from your ViewController
+Present the Steuerbot ViewController
 ```swift
 import Steuerbot
 ...
