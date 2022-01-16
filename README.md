@@ -15,7 +15,7 @@ Then, select `Add Package`.
 
 ### Embed the Framework
 
-In your Apps target add `Steuerbot` to `Frameworks, Libraries and Embedded Content` 
+Make sure `Steuerbot` is added to `Frameworks, Libraries and Embedded Content` in your Apps target.
 
 
 ## Usage
