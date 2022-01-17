@@ -26,7 +26,7 @@ let package = Package(
         .binaryTarget(
             name: "SwiftFramework",
             url: "https://sb.kramser.xyz/SwiftFramework.xcframework.zip",
-            checksum: "8ba01fe1d99bf847171d69a867dc35311e284dc893b415353dbde4c8759d7a37"
+            checksum: "aed3ed6ce0c0fdec4b3ab5a0831e72f973692a7f00a5eecd6dd6a36ed5d7ac24"
         ),
         .binaryTarget(
             name: "hermes",
