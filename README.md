@@ -8,7 +8,7 @@ This Swift Package allows you to add the Steuerbot SDK to your iOS App.
 Add the package by selecting `File` → `Add Packages…` in Xcode’s menu bar. Search for the Steuerbot SDK using the repo's URL:
 
 ```console
-https://github.com/steuerbot/SteuerbotIosSDK.git
+https://github.com/steuerbot/ios-sdk.git
 ```
 
 Then, select `Add Package`.
