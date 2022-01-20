@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Steuerbot",
     platforms: [
-        .iOS(.v14)
+        .iOS(.v12)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -25,8 +25,8 @@ let package = Package(
         
         .binaryTarget(
             name: "SwiftFramework",
-            url: "https://steuerbot-app-artifacts-nonprod.s3.eu-central-1.amazonaws.com/sdk/ios/v0.0.1/SwiftFramework.xcframework.zip",
-            checksum: "aed3ed6ce0c0fdec4b3ab5a0831e72f973692a7f00a5eecd6dd6a36ed5d7ac24"
+            url: "https://steuerbot-app-artifacts-nonprod.s3.eu-central-1.amazonaws.com/sdk/ios/v0.0.2/SwiftFramework.xcframework.zip",
+            checksum: "625eed9ae1735a1eccbc9162a1a9f42f719bb963b1ef7ad962a5018218085f63"
         ),
         .binaryTarget(
             name: "hermes",
