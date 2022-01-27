@@ -79,6 +79,12 @@ self.present(controller, animated: true, completion: nil)
 
 #### <a name="Actions"></a>Actions
 
+Actions can be triggered while initializing the SDK, or at runtime by calling following function:
+
+```swift
+framework.triggerAction(action: .taxYear(2018))
+```
+
 Supported Actions are:
 
 ##### TaxYearAction
@@ -106,6 +112,47 @@ Jump to screen with prefilled tax declaration feature:
 ```
 
 #### <a name="Deeplinks"></a>Deeplinks
+
+Deeplinks can be triggered while initializing the SDK, or at runtime by calling following function:
+
+```swift
+framework.triggerDeeplink(url: "https://app.steuerbot.com/steuerjahr-2020")
+```
+
+Supported Deeplinks are:
+
+##### TaxYearDeeplink
+
+Jump to a specific tax year:
+
+```
+https://app.steuerbot.com/steuerjahr-XXXX
+```
+```
+/steuerjahr-XXXX
+```
+
+##### SupportDeeplink
+
+Jump to support screen:
+
+```
+https://app.steuerbot.com/support
+```
+```
+/support
+```
+
+##### VastDeeplink
+
+Jump to screen with prefilled tax declaration feature:
+
+```
+https://app.steuerbot.com/vorausgefuellte-steuererklaerung
+```
+```
+/vorausgefuellte-steuererklaerung
+```
 
 #### <a name="Theming"></a>Theming
 
