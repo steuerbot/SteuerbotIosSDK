@@ -25,7 +25,7 @@ Make sure `Steuerbot` is added to `Frameworks, Libraries and Embedded Content` i
 import Steuerbot
 ...
 let user = User(email: "hello@steuerbot.com", forename: "John", surname: "Doe")
-let framework = SteuerbotSDK(partnerId: "vivid", token: "", user: user)
+let framework = SteuerbotSDK(partnerId: "your-partner-id", token: "", user: user)
 let controller = UIViewController()
 controller.view = framework.getView()
 self.present(controller, animated: true, completion: nil)
@@ -43,8 +43,8 @@ self.present(controller, animated: true, completion: nil)
 | language | .german, .english | false | .german is the default |
 | [lightTheme](#Theming) | String | false | If only one theme is provided, the provided theme will be used in dark and in light mode. |
 | [darkTheme](#Theming) | String | false | If only one theme is provided, the provided theme will be used in dark and in light mode. |
-| [action](#Actions) | .vast, .support, .taxYear(Int) | false | Provided actions will trigger a (navigation) action when the SDK is initialized. Additionally actions can be triggered in [runtime](#Actions). |
-| [deeplink](#Deeplinks) | String | false | Provided deeplinks will trigger a (navigation) action when the SDK is initialized. Additionally deeploinks can be triggered in [runtime](#Deeplinks). Using `actions` is the prefered way to trigger actions. |
+| [action](#Actions) | .vast, .support, .taxYear(Int) | false | Provided actions will trigger a (navigation) action when the SDK is initialized. Additionally actions can be triggered at [runtime](#Actions). |
+| [deeplink](#Deeplinks) | String | false | Provided deeplinks will trigger a (navigation) action when the SDK is initialized. Additionally deeploinks can be triggered at [runtime](#Deeplinks). Using `actions` is the prefered way to trigger actions. |
 
 #### <a name="User"></a>User
 
