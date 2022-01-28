@@ -25,7 +25,8 @@ Make sure `Steuerbot` is added to `Frameworks, Libraries and Embedded Content` i
 import Steuerbot
 ...
 let user = User(email: "hello@steuerbot.com", forename: "John", surname: "Doe")
-let framework = SteuerbotSDK(partnerId: "your-partner-id", token: "", user: user)
+let framework = SteuerbotSDK(partnerId: "your-partner-id", token: "your-user-token", user: user)
+
 let controller = UIViewController()
 controller.view = framework.getView()
 self.present(controller, animated: true, completion: nil)

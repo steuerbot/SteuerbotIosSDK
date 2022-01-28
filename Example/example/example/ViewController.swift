@@ -15,10 +15,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func startSteuerbotAction(_ sender: Any) {
-        let framework = SteuerbotSDK()
+    
+    @IBAction func triggerAction(_ sender: Any) {
+        framework?.triggerAction(action: .support)
+    }
+    
+    @IBAction func startSteuerbot(_ sender: Any) {
         let controller = UIViewController()
-        controller.view = framework.getView()
+        controller.view = framework?.getView()
         self.present(controller, animated: true, completion: nil)
     }
 }
