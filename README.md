@@ -37,10 +37,12 @@ self.present(controller, animated: true, completion: nil)
 
 | Property  | Value | Required | Notes |
 |:---|:---|:---|:---|
+| debug  | Bool | false | `false` is default |
 | partnerID  | String | true | Your personal ID, provided by [Steuerbot](mailto:marc@steuerbot.com) |
 | token | String | true | TODO |
 | user | [User](#User) | true | If the provided mail address is already in use, error will be thrown.|
-| language | .german, .english | false | .german is the default |
+| apiUrl | String | false |  |
+| language | .german, .english | false | `.german` is the default |
 | [lightTheme](#Theming) | String | false | If only one theme is provided, the provided theme will be used in dark and in light mode. |
 | [darkTheme](#Theming) | String | false | If only one theme is provided, the provided theme will be used in dark and in light mode. |
 | [action](#Actions) | .vast, .support, .taxYear(Int) | false | Provided actions will trigger a (navigation) action when the SDK is initialized. Additionally actions can be triggered at [runtime](#Actions). |
