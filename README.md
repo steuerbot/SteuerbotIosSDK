@@ -42,13 +42,14 @@ self.present(controller, animated: true, completion: nil)
 | partnerID  | String | true | Your personal ID, provided by [Steuerbot](mailto:marc@steuerbot.com) |
 | token | String | true | TODO |
 | user | [User](#User) | true | If the provided mail address is already in use, error will be thrown.|
+| [paymentLink](#payment) | String | true | Will be opened/called, when the user triggers payment. Should initiate the payment process in your app. |
+| backButtonLink | String | false | Link will be opened/called, when the user presses the back button on the SDKs home screen.|
 | apiUrl | String | false |  |
 | language | .german, .english | false | `.german` is the default |
 | [lightTheme](#Theming) | String | false | If only one theme is provided, the provided theme will be used in dark and in light mode. |
 | [darkTheme](#Theming) | String | false | If only one theme is provided, the provided theme will be used in dark and in light mode. |
 | [action](#Actions) | .vast, .support, .taxYear(Int) | false | Provided actions will trigger a (navigation) action when the SDK is initialized. Additionally actions can be triggered at [runtime](#Actions). |
 | [deeplink](#Deeplinks) | String | false | Provided deeplinks will trigger a (navigation) action when the SDK is initialized. Additionally deeploinks can be triggered at [runtime](#Deeplinks). Using `actions` is the prefered way to trigger actions. |
-
 #### <a name="User"></a>User
 
 | Property  | Value | Required | Notes |
@@ -89,6 +90,14 @@ framework.triggerAction(action: .taxYear(2018))
 ```
 
 Supported Actions are:
+
+##### PaymentSuccessAction
+
+Completes the [payment](#payment) process:
+```swift
+.paymentSuccess(price: 999, submitId: "98765", offerId: "61f29833a137d993740cc610", botId: "237f6193-f4e9-4258-b0f5-1f428e63013a")
+```
+You are getting `submitId`, `offerId` and `botId` passed as parameters with the `paymentLink`. `price` is the price, the user payed to you for the service. `price` is in ct.
 
 ##### TaxYearAction
 
@@ -156,6 +165,25 @@ https://app.steuerbot.com/vorausgefuellte-steuererklaerung
 ```
 /vorausgefuellte-steuererklaerung
 ```
+
+#### <a name="payment"></a>Payment
+
+First, the `paymentLink` gets triggered by the SDK. `submitId`, `offerId`, `botId`, `purpose`, `iban` and `refund` will be appended as query-parameters to your provided URL. 
+
+```
+https://your-domain.com/your-link/?refund=105099&purpose=PV0711522324&iban=DE68210501700012345678&submitId=98765&offerId=61f29833a137d993740cc610&botId=237f6193-f4e9-4258-b0f5-1f428e63013a
+```
+**submitId**, **offerId**, **botId**: need to be passed back for referencing via the `paymentSuccess`-Action.
+
+**purpose** is the unique OrderID for this transaction.
+
+**iban** is the Iban, the user has to transfer the money for the Steuerbot-Service to.
+
+**refund** is the calculated tax-refund, the user will receive.
+
+
+Then, after the user has paid via your payment-gateway, you have to call the `paymentSuccess`-Action, passing back `submitId`, `offerId`, `botId` and the price, the user has paid. This will reopen the sibmission-process in the SteuerbotSDK and will guide the user to submit his declaration. 
+
 
 #### <a name="Theming"></a>Theming
 
