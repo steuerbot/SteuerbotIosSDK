@@ -182,7 +182,7 @@ https://your-domain.com/your-link/?refund=105099&purpose=PV0711522324&iban=DE682
 **refund** is the calculated tax-refund, the user will receive.
 
 
-Then, after the user has paid via your payment-gateway, you have to call the `paymentSuccess`-Action, passing back `submitId`, `offerId`, `botId` and the price, the user has paid. This will reopen the sibmission-process in the SteuerbotSDK and will guide the user to submit his declaration. 
+Then, after the user has paid via your payment-gateway, you have to call the `paymentSuccess`-Action, passing back `submitId`, `offerId`, `botId` and the price, the user has paid. This will reopen the submission-process in the SteuerbotSDK and will guide the user to submit his declaration. 
 
 
 #### <a name="Theming"></a>Theming
