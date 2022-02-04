@@ -40,6 +40,7 @@ self.present(controller, animated: true, completion: nil)
 |:---|:---|:---|:---|
 | debug  | Bool | false | `false` is default |
 | partnerID  | String | true | Your personal ID, provided by [Steuerbot](mailto:marc@steuerbot.com) |
+| partnerName  | String | true | The Name of your Company/App |
 | token | String | true | TODO |
 | user | [User](#User) | true | If the provided mail address is already in use, error will be thrown.|
 | [paymentLink](#payment) | String | true | Will be opened/called, when the user triggers payment. Should initiate the payment process in your app. |
@@ -75,8 +76,8 @@ self.present(controller, animated: true, completion: nil)
 | state | String | true | usually short-form of state, for example BW, BY, NRW, |
 | country | String | true | Country code, "DE" for Germany |
 | countryLong | String | true | Full Country name |
-| latitude | Float | true |  |
-| longitude | Float | true |  |
+| latitude | Double | false |  |
+| longitude | Double | false |  |
 | numberAddition | String | false | for example "/1", "a", "-2" |
 | supplement | String | false | for example apartment, building, floor |
 
