@@ -14,7 +14,7 @@ class SteuerbotViewController: UIViewController {
 
     override func viewDidLoad() {
         let user = User(email: "sdk01@byom.de", forename: "Max", surname: "Power")
-        framework = SteuerbotSDK(debug: true, partnerId: "vivid", token: "", user: user, paymentLink: "https://your-link.com", apiUrl: "https://api.test2.steuerbot.com")
+        framework = SteuerbotSDK(debug: true, partnerId: "my-id", partnerName: "MyCompanyName", token: "my-token", user: user, paymentLink: "https://your-link.com", apiUrl: "https://api.test2.steuerbot.com")
         self.view = framework?.getView()
         super.viewDidLoad()
     }
