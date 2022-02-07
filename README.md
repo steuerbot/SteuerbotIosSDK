@@ -192,6 +192,8 @@ You can set your own custom dark and light theme. If only one theme is provided,
 
 This is the specification of a theme. All fields are optional. Customize as you want.
 
+More details can be found on our [Wiki](https://github.com/steuerbot/ios-sdk/wiki/Styling)
+
 ```ts
 {
   name: string;
