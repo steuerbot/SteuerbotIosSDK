@@ -37,4 +37,4 @@ self.present(controller, animated: true, completion: nil)
 You can find detailed instructions in the [Wiki](https://github.com/steuerbot/ios-sdk/wiki)
 
 ## License
-[TODO](https://todo.de)
+The contents of this repository are licensed under the [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
