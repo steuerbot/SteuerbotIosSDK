@@ -25,8 +25,8 @@ let package = Package(
         
         .binaryTarget(
             name: "SwiftFramework",
-            url: "https://steuerbot-app-artifacts-nonprod.s3.eu-central-1.amazonaws.com/sdk/ios/1.0.5-SNAPSHOT/SwiftFramework.xcframework.zip",
-            checksum: "12d9a4cdfb008fb6ec6bf76f577424036dc90573dc2b187c2feb0c1a5145da60"
+            url: "https://steuerbot-app-artifacts-nonprod.s3.eu-central-1.amazonaws.com/sdk/ios/1.0.6-SNAPSHOT/SwiftFramework.xcframework.zip",
+            checksum: "10e880d30c872b87d1683fe34d6b14cd3c63d6d0d7ea5d0c6025e5aab92e9a21"
         ),
         .binaryTarget(
             name: "hermes",
