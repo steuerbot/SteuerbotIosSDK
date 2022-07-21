@@ -11,7 +11,7 @@ import Steuerbot
 
 class PaymentViewController: UIViewController {
     
-    var price: String?
+    var price = 1000
     var purpose: String?
     var iban: String?
     var refund: String?
@@ -29,23 +29,28 @@ class PaymentViewController: UIViewController {
     @IBOutlet weak var botIdLabel: UILabel!
     
     override func viewDidLoad() {
-        priceLabel.text = "Price: \(price ?? "-")€"
-        purposeLabel.text = "Purpose: \(purpose ?? "-")"
-        ibanLabel.text = "IBAN: \(iban ?? "-")"
-        refundLabel.text = "Refund: \(refund ?? "-")"
-        submitIdLabel.text = "SubmitId: \(submitId ?? "-")"
-        offerIdLabel.text = "OfferId: \(offerId ?? "-")"
-        botIdLabel.text = "BotId: \(botId ?? "-")"
+        setLabels()
         super.viewDidLoad()
     }
     
+    func setLabels() {
+        let refundInt = Int(refund ?? "")
+        priceLabel.text = "\(price/100) €"
+        purposeLabel.text = "\(purpose ?? "-")"
+        ibanLabel.text = "\(iban ?? "-")"
+        refundLabel.text = "\(refundInt != nil ? String(refundInt!/100) : "-") €"
+        submitIdLabel.text = "SubmitId: \(submitId ?? "-")"
+        offerIdLabel.text = "OfferId: \(offerId ?? "-")"
+        botIdLabel.text = "BotId: \(botId ?? "-")"
+    }
+    
     @IBAction func payActionButton(_ sender: Any) {
-        if (price == nil || submitId == nil || offerId == nil || botId == nil) {
+        if ( submitId == nil || offerId == nil || botId == nil) {
             // TODO: Handle
             return
         }
         
-        framework?.triggerAction(action: .paymentSuccess(price: Int(price!) ?? 0, submitId: submitId!, offerId: offerId!, botId: botId!))
+        framework?.triggerAction(action: .paymentSuccess(price: price, submitId: submitId!, offerId: offerId!, botId: botId!))
         
         self.dismiss(animated: true)
     }

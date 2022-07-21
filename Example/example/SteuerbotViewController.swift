@@ -43,18 +43,15 @@ class SteuerbotViewController: UIViewController {
     }
     
     func areInputsFilled() -> Bool {
-        
         return forenameOutlet.text != "" &&
         surenameOutlet.text != "" &&
         mailOutlet.text != "" &&
         passwordOutlet.text != ""
     }
     
-    
     func inputChanged() {
         startSteuerbotOutlet.isEnabled = areInputsFilled()
     }
-    
     
     func getPwHash(pw: String) -> String {
         // TODO: Handle
@@ -69,7 +66,7 @@ class SteuerbotViewController: UIViewController {
         }
         
         let user = User(email: mailOutlet.text!, forename: forenameOutlet.text!, surname: surenameOutlet.text!)
-        framework = SteuerbotSDK(debug: true, partnerId: "sdktest", partnerName: "Steuerbot", token: getPwHash(pw: passwordOutlet.text!).lowercased(), user: user, paymentLink: "com.steuerbot.sdk.example://steuerbot.com/payment", showCloseBackIcon: true, apiUrl: "https://api.staging.steuerbot.com")
+        framework = SteuerbotSDK(debug: true, partnerId: "sdktest", partnerName: "Steuerbot", token: getPwHash(pw: passwordOutlet.text!).lowercased(), user: user, paymentLink: "com.steuerbot.sdk.example://steuerbot.com/payment", showCloseBackIcon: true, apiUrl: "https://api.test.steuerbot.com")
         
         self.view = framework?.getView()
         
