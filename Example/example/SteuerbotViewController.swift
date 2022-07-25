@@ -11,8 +11,13 @@ import CryptoKit
 
 class SteuerbotViewController: UIViewController {
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        forenameOutlet.text = defaults.string(forKey: "forename")
+        surenameOutlet.text = defaults.string(forKey: "surename")
+        mailOutlet.text = defaults.string(forKey: "mail")
         inputChanged()
     }
     
@@ -23,14 +28,17 @@ class SteuerbotViewController: UIViewController {
     @IBOutlet weak var passwordOutlet: UITextField!
     
     @IBAction func forenameAction(_ sender: Any) {
+        defaults.set(forenameOutlet.text, forKey: "forename")
         inputChanged()
     }
     
     @IBAction func surenameAction(_ sender: Any) {
+        defaults.set(surenameOutlet.text, forKey: "surename")
         inputChanged()
     }
     
     @IBAction func mailAction(_ sender: Any) {
+        defaults.set(mailOutlet.text, forKey: "mail")
         inputChanged()
     }
     
@@ -53,9 +61,8 @@ class SteuerbotViewController: UIViewController {
         startSteuerbotOutlet.isEnabled = areInputsFilled()
     }
     
-    func getPwHash(pw: String) -> String {
-        // TODO: Handle
-        guard let data = pw.data(using: .utf8) else { return "" }
+    func getPwHash(pw: String) -> String? {
+        guard let data = pw.data(using: .utf8) else { return nil }
         let digest = SHA512.hash(data: data)
         return digest.hexStr
     }
@@ -66,14 +73,18 @@ class SteuerbotViewController: UIViewController {
         }
         
         let user = User(email: mailOutlet.text!, forename: forenameOutlet.text!, surname: surenameOutlet.text!)
-        framework = SteuerbotSDK(debug: true, partnerId: "sdktest", partnerName: "Steuerbot", token: getPwHash(pw: passwordOutlet.text!).lowercased(), user: user, paymentLink: "com.steuerbot.sdk.example://steuerbot.com/payment", showCloseBackIcon: true, apiUrl: "https://api.test.steuerbot.com")
+        let hash = getPwHash(pw: passwordOutlet.text!)?.lowercased()
+        
+        if (hash == nil) {
+            let alert = UIAlertController(title: "Error generating hash", message: "An Error occured while generationg the password hash.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        framework = SteuerbotSDK(debug: true, partnerId: "sdktest", partnerName: "Steuerbot", token: hash!, user: user, paymentLink: "com.steuerbot.sdk.example://steuerbot.com/payment", showCloseBackIcon: true, apiUrl: "https://api.test.steuerbot.com")
         
         self.view = framework?.getView()
-        
-        //        let controller = UIViewController()
-        //        controller.view = framework?.getView()
-        //        controller.modalPresentationStyle = .overFullScreen
-        //        self.present(controller, animated: true, completion: nil)
     }
 }
 

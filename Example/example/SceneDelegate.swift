@@ -14,14 +14,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
-    // TODO: Move
     func handleURL(_ url: URL) {
         let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
         let items = (urlComponents?.queryItems)! as [NSURLQueryItem]
         
         if (url.lastPathComponent == "payment") {
-            
-            // TODO: Improve Init
             guard let submitId = items.first(where: {$0.name == "submitId"})?.value,
                   let offerId = items.first(where: {$0.name == "offerId"})?.value,
                   let botId = items.first(where: {$0.name == "botId"})?.value,
@@ -29,8 +26,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                   let iban = items.first(where: {$0.name == "iban"})?.value,
                   let refund = items.first(where: {$0.name == "refund"})?.value
             else {
-                // TODO
-                print("Provided URL isn't valid")
+                let alert = UIAlertController(title: "Invalid URL", message: "The provided payment URL is missing a required query parameter", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+                window?.rootViewController?.present(alert, animated: true, completion: nil)
                 return
             }
             
