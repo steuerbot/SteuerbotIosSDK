@@ -9,18 +9,20 @@
 /* Begin PBXBuildFile section */
 		0055FCDB28889FA600668DCA /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0055FCDA28889FA600668DCA /* PaymentViewController.swift */; };
 		0055FCDD288942A700668DCA /* Digest+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0055FCDC288942A700668DCA /* Digest+extension.swift */; };
+		00649B20289088F3009390DD /* Deeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00649B1F289088F3009390DD /* Deeplink.swift */; };
 		0066311D2798BA0C00857F45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0066311C2798BA0C00857F45 /* AppDelegate.swift */; };
 		0066311F2798BA0C00857F45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0066311E2798BA0C00857F45 /* SceneDelegate.swift */; };
 		006631242798BA0C00857F45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006631222798BA0C00857F45 /* Main.storyboard */; };
 		006631292798BA0D00857F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006631272798BA0D00857F45 /* LaunchScreen.storyboard */; };
 		006631342798BDB600857F45 /* Steuerbot in Frameworks */ = {isa = PBXBuildFile; productRef = 006631332798BDB600857F45 /* Steuerbot */; };
-		006631362798BF8600857F45 /* SteuerbotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006631352798BF8600857F45 /* SteuerbotViewController.swift */; };
+		006631362798BF8600857F45 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006631352798BF8600857F45 /* MainViewController.swift */; };
 		009B49592887EF2C0058368D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009B49582887EF2C0058368D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0055FCDA28889FA600668DCA /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		0055FCDC288942A700668DCA /* Digest+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Digest+extension.swift"; sourceTree = "<group>"; };
+		00649B1F289088F3009390DD /* Deeplink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deeplink.swift; sourceTree = "<group>"; };
 		006631192798BA0C00857F45 /* example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0066311C2798BA0C00857F45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0066311E2798BA0C00857F45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +30,7 @@
 		006631282798BA0D00857F45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0066312A2798BA0D00857F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		006631312798BB2800857F45 /* SteuerbotIosSDK */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SteuerbotIosSDK; path = ../..; sourceTree = "<group>"; };
-		006631352798BF8600857F45 /* SteuerbotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteuerbotViewController.swift; sourceTree = "<group>"; };
+		006631352798BF8600857F45 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		009B49582887EF2C0058368D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,8 +51,9 @@
 			children = (
 				0066311C2798BA0C00857F45 /* AppDelegate.swift */,
 				0066311E2798BA0C00857F45 /* SceneDelegate.swift */,
+				00649B1F289088F3009390DD /* Deeplink.swift */,
 				0055FCDA28889FA600668DCA /* PaymentViewController.swift */,
-				006631352798BF8600857F45 /* SteuerbotViewController.swift */,
+				006631352798BF8600857F45 /* MainViewController.swift */,
 				0055FCDC288942A700668DCA /* Digest+extension.swift */,
 				006631222798BA0C00857F45 /* Main.storyboard */,
 				009B49582887EF2C0058368D /* Assets.xcassets */,
@@ -162,8 +165,9 @@
 				0066311D2798BA0C00857F45 /* AppDelegate.swift in Sources */,
 				0055FCDD288942A700668DCA /* Digest+extension.swift in Sources */,
 				0055FCDB28889FA600668DCA /* PaymentViewController.swift in Sources */,
-				006631362798BF8600857F45 /* SteuerbotViewController.swift in Sources */,
+				006631362798BF8600857F45 /* MainViewController.swift in Sources */,
 				0066311F2798BA0C00857F45 /* SceneDelegate.swift in Sources */,
+				00649B20289088F3009390DD /* Deeplink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

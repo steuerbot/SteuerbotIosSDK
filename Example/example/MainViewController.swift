@@ -9,7 +9,7 @@ import UIKit
 import Steuerbot
 import CryptoKit
 
-class SteuerbotViewController: UIViewController {
+class MainViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     
@@ -91,9 +91,11 @@ class SteuerbotViewController: UIViewController {
             return
         }
         
-        framework = SteuerbotSDK(debug: debugOutlet.isOn, partnerId: "sdktest", partnerName: "Steuerbot", token: hash!, user: user, paymentLink: "com.steuerbot.sdk.example://steuerbot.com/payment", showCloseBackIcon: true, apiUrl: apiOutlet.text)
+        framework = SteuerbotSDK(debug: debugOutlet.isOn, partnerId: "sdktest", partnerName: "Steuerbot", token: hash!, user: user, paymentLink: "com.steuerbot.sdk.example://steuerbot.com/payment", backButtonLink: "com.steuerbot.sdk.example://steuerbot.com/goback", showCloseBackIcon: true, apiUrl: apiOutlet.text)
         
-        self.view = framework?.getView()
+        let steuerbotController = UIViewController()
+        steuerbotController.view = framework?.getView()
+        self.navigationController?.pushViewController(steuerbotController, animated: false)
     }
 }
 
