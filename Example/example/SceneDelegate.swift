@@ -16,15 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func handleURL(_ url: URL) {
         let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
-        let items = (urlComponents?.queryItems)! as [NSURLQueryItem]
+        let items = (urlComponents?.queryItems)
         
         if (url.lastPathComponent == "payment") {
-            guard let submitId = items.first(where: {$0.name == "submitId"})?.value,
-                  let offerId = items.first(where: {$0.name == "offerId"})?.value,
-                  let botId = items.first(where: {$0.name == "botId"})?.value,
-                  let purpose = items.first(where: {$0.name == "purpose"})?.value,
-                  let iban = items.first(where: {$0.name == "iban"})?.value,
-                  let refund = items.first(where: {$0.name == "refund"})?.value
+            guard let submitId = items?.first(where: {$0.name == "submitId"})?.value,
+                  let offerId = items?.first(where: {$0.name == "offerId"})?.value,
+                  let botId = items?.first(where: {$0.name == "botId"})?.value,
+                  let purpose = items?.first(where: {$0.name == "purpose"})?.value,
+                  let iban = items?.first(where: {$0.name == "iban"})?.value,
+                  let refund = items?.first(where: {$0.name == "refund"})?.value
             else {
                 let alert = UIAlertController(title: "Invalid URL", message: "The provided payment URL is missing a required query parameter", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))

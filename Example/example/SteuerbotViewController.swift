@@ -18,6 +18,7 @@ class SteuerbotViewController: UIViewController {
         forenameOutlet.text = defaults.string(forKey: "forename")
         surenameOutlet.text = defaults.string(forKey: "surename")
         mailOutlet.text = defaults.string(forKey: "mail")
+        apiOutlet.text = defaults.string(forKey: "api") ?? "https://api.staging.steuerbot.com"
         inputChanged()
     }
     
@@ -26,6 +27,8 @@ class SteuerbotViewController: UIViewController {
     @IBOutlet weak var surenameOutlet: UITextField!
     @IBOutlet weak var mailOutlet: UITextField!
     @IBOutlet weak var passwordOutlet: UITextField!
+    @IBOutlet weak var apiOutlet: UITextField!
+    @IBOutlet weak var debugOutlet: UISwitch!
     
     @IBAction func forenameAction(_ sender: Any) {
         defaults.set(forenameOutlet.text, forKey: "forename")
@@ -46,6 +49,11 @@ class SteuerbotViewController: UIViewController {
         inputChanged()
     }
     
+    @IBAction func apiAction(_ sender: Any) {
+        defaults.set(apiOutlet.text, forKey: "api")
+        inputChanged()
+    }
+    
     @IBAction func startSteuerbotActionButton(_ sender: Any) {
         openSteuerbotSDK()
     }
@@ -54,7 +62,8 @@ class SteuerbotViewController: UIViewController {
         return forenameOutlet.text != "" &&
         surenameOutlet.text != "" &&
         mailOutlet.text != "" &&
-        passwordOutlet.text != ""
+        passwordOutlet.text != "" &&
+        apiOutlet.text != ""
     }
     
     func inputChanged() {
@@ -82,7 +91,7 @@ class SteuerbotViewController: UIViewController {
             return
         }
         
-        framework = SteuerbotSDK(debug: true, partnerId: "sdktest", partnerName: "Steuerbot", token: hash!, user: user, paymentLink: "com.steuerbot.sdk.example://steuerbot.com/payment", showCloseBackIcon: true, apiUrl: "https://api.test.steuerbot.com")
+        framework = SteuerbotSDK(debug: debugOutlet.isOn, partnerId: "sdktest", partnerName: "Steuerbot", token: hash!, user: user, paymentLink: "com.steuerbot.sdk.example://steuerbot.com/payment", showCloseBackIcon: true, apiUrl: apiOutlet.text)
         
         self.view = framework?.getView()
     }
