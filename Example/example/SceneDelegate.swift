@@ -18,11 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
         let items = (urlComponents?.queryItems)
         
-        if (url.lastPathComponent == "goback") {
-            window?.rootViewController?.dismiss(animated: true)
-            print("goback")
-        }
-        
         if (url.lastPathComponent == "payment") {
             guard let submitId = items?.first(where: {$0.name == "submitId"})?.value,
                   let offerId = items?.first(where: {$0.name == "offerId"})?.value,

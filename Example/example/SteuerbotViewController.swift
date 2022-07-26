@@ -91,12 +91,9 @@ class SteuerbotViewController: UIViewController {
             return
         }
         
-        framework = SteuerbotSDK(debug: debugOutlet.isOn, partnerId: "sdktest", partnerName: "Steuerbot", token: hash!, user: user, paymentLink: "com.steuerbot.sdk.example://steuerbot.com/payment", backButtonLink: "com.steuerbot.sdk.example://steuerbot.com/goback", showCloseBackIcon: true, apiUrl: apiOutlet.text)
+        framework = SteuerbotSDK(debug: debugOutlet.isOn, partnerId: "sdktest", partnerName: "Steuerbot", token: hash!, user: user, paymentLink: "com.steuerbot.sdk.example://steuerbot.com/payment", showCloseBackIcon: true, apiUrl: apiOutlet.text)
         
-        let controller = UIViewController()
-        controller.view = framework?.getView()
-        controller.modalPresentationStyle = .overFullScreen
-        self.present(controller, animated: true, completion: nil)
+        self.view = framework?.getView()
     }
 }
 
