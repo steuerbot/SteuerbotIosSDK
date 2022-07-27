@@ -14,7 +14,7 @@
 		006631242798BA0C00857F45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006631222798BA0C00857F45 /* Main.storyboard */; };
 		006631292798BA0D00857F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006631272798BA0D00857F45 /* LaunchScreen.storyboard */; };
 		006631342798BDB600857F45 /* Steuerbot in Frameworks */ = {isa = PBXBuildFile; productRef = 006631332798BDB600857F45 /* Steuerbot */; };
-		006631362798BF8600857F45 /* SteuerbotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006631352798BF8600857F45 /* SteuerbotViewController.swift */; };
+		006631362798BF8600857F45 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006631352798BF8600857F45 /* MainViewController.swift */; };
 		009B49592887EF2C0058368D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009B49582887EF2C0058368D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		006631282798BA0D00857F45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0066312A2798BA0D00857F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		006631312798BB2800857F45 /* SteuerbotIosSDK */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SteuerbotIosSDK; path = ../..; sourceTree = "<group>"; };
-		006631352798BF8600857F45 /* SteuerbotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteuerbotViewController.swift; sourceTree = "<group>"; };
+		006631352798BF8600857F45 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		009B49582887EF2C0058368D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,7 +50,7 @@
 				0066311C2798BA0C00857F45 /* AppDelegate.swift */,
 				0066311E2798BA0C00857F45 /* SceneDelegate.swift */,
 				0055FCDA28889FA600668DCA /* PaymentViewController.swift */,
-				006631352798BF8600857F45 /* SteuerbotViewController.swift */,
+				006631352798BF8600857F45 /* MainViewController.swift */,
 				0055FCDC288942A700668DCA /* Digest+extension.swift */,
 				006631222798BA0C00857F45 /* Main.storyboard */,
 				009B49582887EF2C0058368D /* Assets.xcassets */,
@@ -162,7 +162,7 @@
 				0066311D2798BA0C00857F45 /* AppDelegate.swift in Sources */,
 				0055FCDD288942A700668DCA /* Digest+extension.swift in Sources */,
 				0055FCDB28889FA600668DCA /* PaymentViewController.swift in Sources */,
-				006631362798BF8600857F45 /* SteuerbotViewController.swift in Sources */,
+				006631362798BF8600857F45 /* MainViewController.swift in Sources */,
 				0066311F2798BA0C00857F45 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,12 +316,13 @@
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "SDK - Steuerbot";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,12 +347,13 @@
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "SDK - Steuerbot";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

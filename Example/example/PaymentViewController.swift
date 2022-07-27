@@ -46,7 +46,11 @@ class PaymentViewController: UIViewController {
     
     @IBAction func payActionButton(_ sender: Any) {
         if ( submitId == nil || offerId == nil || botId == nil) {
-            let alert = UIAlertController(title: "Parameter missing", message: "submitID, offerId or botId is missing for payment.", preferredStyle: .alert)
+            let alert = UIAlertController(
+                title: "Parameter missing",
+                message: "submitID, offerId or botId is missing for payment.",
+                preferredStyle: .alert
+            )
             alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
