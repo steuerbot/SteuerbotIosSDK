@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: yukiarrr/ios-build-action@v1.5.0
+      - uses: sparkfabrik/ios-build-action@v1.0.0
         with:
           project-path: Example/example/example.xcodeproj
           p12-base64: ${{ secrets.P12_BASE64 }}
