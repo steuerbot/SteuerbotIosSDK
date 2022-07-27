@@ -1,11 +1,10 @@
-
-name: CI
+name: Build Example App
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
   workflow_dispatch:
 
@@ -14,13 +13,21 @@ jobs:
     runs-on: macOS-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - uses: yukiarrr/ios-build-action@v1.5.0
+      - name: Build Example iOS App
+        uses: yukiarrr/ios-build-action@v1.5.0
         with:
           project-path: Example/example/example.xcodeproj
-          p12-base64: ${{ secrets.P12_BASE64 }}
           mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
+          p12-base64: ${{ secrets.P12_BASE64 }}
           team-id: ${{ secrets.TEAM_ID }}
-          
+          export-method: "ad-hoc"
+
+      - name: Upload App Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ios-app
+          path: output.ipa
