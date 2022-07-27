@@ -18,8 +18,8 @@ jobs:
       - uses: yukiarrr/ios-build-action@v1.5.0
         with:
           project-path: Example/example/example.xcodeproj
-          p12-base64: ${{ secrets.P12_BASE64 }}
           mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
+          p12-base64: ${{ secrets.P12_BASE64 }}
           team-id: ${{ secrets.TEAM_ID }}
           export-method: "ad-hoc"
